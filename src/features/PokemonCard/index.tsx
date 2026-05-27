@@ -8,7 +8,8 @@ type Props ={
 
 const PokemonCard = ({poke} : Props) => {
     const { id, name } = poke;
-    const image = `${process.env.NEXT_PUBLIC_POKE_API_IMG_URL}/${id}.png`
+    const baseImgUrl = process.env.NEXT_PUBLIC_POKE_API_IMG_URL || "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
+    const image = `${baseImgUrl}/${id}.png`
 
     return (
         <div className={styles.card}>
